@@ -11,14 +11,6 @@ export default function Topbar() {
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">
-            <NotificationsNone />
-            <span className="topIconBadge">2</span>
-          </div>
-          <div className="topbarIconContainer">
-            <Language />
-            <span className="topIconBadge">2</span>
-          </div>
-          <div className="topbarIconContainer">
             <Settings />
           </div>
           <img

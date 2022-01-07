@@ -10,6 +10,9 @@ import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
 import Login from "./pages/login/Login";
+import WidgetLg from "./components/widgetLg/WidgetLg";
+import FeaturedInfo from "./components/featuredInfo/FeaturedInfo";
+import Chart from "./components/chart/Chart";
 
 function App() {
   const admin = JSON.parse(
@@ -25,9 +28,20 @@ function App() {
           <>
             <Topbar />
             <div className="container">
-              <Sidebar />
+              <div>
+                <Sidebar />
+              </div>
               <Route exact path="/">
                 <Home />
+              </Route>
+              <Route path="/transactions">
+                <WidgetLg />
+              </Route>
+              <Route path="/reports">
+                <div style={{ width: "100%" }}>
+                  <FeaturedInfo />
+                  <Chart />
+                </div>
               </Route>
               <Route path="/users">
                 <UserList />
