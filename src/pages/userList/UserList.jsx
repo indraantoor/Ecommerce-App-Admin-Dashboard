@@ -5,7 +5,7 @@ import { userRows } from "../../dummyData";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getUsers } from "../../redux/apiCalls";
+import { getUsers, deleteUser } from "../../redux/apiCalls";
 
 export default function UserList() {
   const [data, setData] = useState(userRows);
@@ -18,7 +18,7 @@ export default function UserList() {
   }, [dispatch]);
 
   const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
+    deleteUser(id, dispatch);
   };
 
   const columns = [
@@ -54,12 +54,12 @@ export default function UserList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/user/" + params.row.id}>
+            <Link to={"/user/" + params.row._id}>
               <button className="userListEdit">Edit</button>
             </Link>
             <DeleteOutline
               className="userListDelete"
-              onClick={() => handleDelete(params.row.id)}
+              onClick={() => handleDelete(params.row._id)}
             />
           </>
         );
