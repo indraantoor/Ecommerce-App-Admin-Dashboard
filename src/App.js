@@ -35,7 +35,7 @@ function App() {
         </Route>
         {!admin && <Redirect to="/login" />}
         {admin && (
-          <>
+          <div className="dashboard">
             <Topbar />
             <div className="container">
               <div>
@@ -72,7 +72,7 @@ function App() {
                 <NewProduct />
               </Route>
             </div>
-          </>
+          </div>
         )}
       </Switch>
     </Router>

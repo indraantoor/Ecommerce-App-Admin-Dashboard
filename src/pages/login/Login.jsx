@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { login } from "../../redux/apiCalls";
-import "./Login.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -16,40 +15,64 @@ const Login = () => {
     login(dispatch, { username, email, password });
   };
 
+  const Background =
+    "https://images.pexels.com/photos/4065133/pexels-photo-4065133.jpeg?cs=srgb&dl=pexels-cottonbro-4065133.jpg&fm=jpg";
+
   return (
-    <div class="container">
-      <div class="wrapper">
-        <div
+    <div
+      style={{
+        height: "100vh",
+        width: "100vw",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundImage: `url(${Background})`,
+        backgroundSize: "cover",
+      }}
+    >
+      <div
+        style={{
+          width: "25%",
+          padding: "20px",
+          backgroundColor: "rgba(1,1,1,0.9)",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: "10px",
+        }}
+      >
+        <h1 style={{ margin: "20px", color: "white" }}>LOGIN</h1>
+        <input
+          style={{ padding: 10, marginBottom: 20, width: "90%" }}
+          type="text"
+          placeholder="username"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          style={{ padding: 10, marginBottom: 20, width: "90%" }}
+          type="text"
+          placeholder="email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          style={{ padding: 10, marginBottom: 20, width: "90%" }}
+          type="password"
+          placeholder="password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button
+          onClick={handleClick}
           style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
+            padding: 10,
+            width: 100,
+            backgroundColor: "white",
+            color: "black",
           }}
         >
-          <h1>LOGIN</h1>
-          <input
-            style={{ padding: 10, marginBottom: 20 }}
-            type="text"
-            placeholder="username"
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <input
-            style={{ padding: 10, marginBottom: 20 }}
-            type="text"
-            placeholder="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            style={{ padding: 10, marginBottom: 20 }}
-            type="password"
-            placeholder="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button onClick={handleClick} style={{ padding: 10, width: 100 }}>
-            Login
-          </button>
-        </div>
+          Login
+        </button>
       </div>
     </div>
   );
