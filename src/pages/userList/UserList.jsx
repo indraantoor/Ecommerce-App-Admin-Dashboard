@@ -13,9 +13,9 @@ export default function UserList() {
   const users = useSelector((state) => state.users.users);
   console.log(useSelector((state) => state.users.users));
 
-  // useEffect(() => {
-  //   getUsers(dispatch);
-  // }, [dispatch]);
+  useEffect(() => {
+    getUsers(dispatch);
+  }, [dispatch]);
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
@@ -66,8 +66,6 @@ export default function UserList() {
       },
     },
   ];
-
-  console.table(users);
 
   return (
     <div className="userList">
