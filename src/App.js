@@ -15,16 +15,17 @@ import FeaturedInfo from "./components/featuredInfo/FeaturedInfo";
 import Chart from "./components/chart/Chart";
 
 function App() {
-  const admin = JSON.parse(
-    JSON.parse(localStorage.getItem("persist:root")).user
-  ).currentUser.isAdmin;
+  // const admin = JSON.parse(
+  //   JSON.parse(localStorage.getItem("persist:root")).user
+  // ).currentUser.isAdmin;
+  const admin = true;
   return (
     <Router>
       <Switch>
         <Route path="/login">
           <Login />
         </Route>
-        {admin && (
+        {admin === true && (
           <>
             <Topbar />
             <div className="container">
