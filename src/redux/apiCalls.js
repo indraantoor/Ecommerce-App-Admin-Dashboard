@@ -55,6 +55,7 @@ export const updateProduct = async (id, product, dispatch) => {
     dispatch(updateProductFailure());
   }
 };
+
 export const addProduct = async (product, dispatch) => {
   dispatch(addProductStart());
   try {
