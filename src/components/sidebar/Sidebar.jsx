@@ -13,6 +13,7 @@ import {
   ChatBubbleOutline,
   WorkOutline,
   AddBoxRounded,
+  Settings,
   Report,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
@@ -85,13 +86,28 @@ export default function Sidebar() {
             </Link>
           </ul>
         </div>
-
+        <div className="sidebarMenu">
+          <h3 className="sidebarTitle">Settings</h3>
+          <ul className="sidebarList">
+            <Link to="/settings" className="link">
+              <li className="sidebarListItem">
+                <Settings className="sidebarIcon" />
+                Settings
+              </li>
+            </Link>
+          </ul>
+        </div>
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Staff</h3>
           <ul className="sidebarList">
             <li className="sidebarListItem">
               <Report className="sidebarIcon" />
-              Report Bug
+              <a
+                href="https://github.com/indraantoor/Ecommerce-App/issues"
+                style={{ textDecoration: "none" }}
+              >
+                Report Bug
+              </a>
             </li>
           </ul>
         </div>

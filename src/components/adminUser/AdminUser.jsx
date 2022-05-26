@@ -10,12 +10,12 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import "./user.css";
+import "./adminUser.css";
 import { updateUser } from "../../redux/apiCalls";
 
-export default function User() {
-  const location = useLocation();
-  const userId = location.pathname.split("/")[2];
+export default function AdminUser({ userId }) {
+  // const location = useLocation();
+  // const userId = location.pathname.split("/")[2];
   const [input, setInputs] = useState({});
   const dispatch = useDispatch();
 
@@ -101,14 +101,6 @@ export default function User() {
                   onChange={handleChange}
                 />
               </div>
-              {/* <div className="userUpdateItem">
-                <label>Full Name</label>
-                <input
-                  type="text"
-                  placeholder="Anna Becker"
-                  className="userUpdateInput"
-                />
-              </div> */}
               <div className="userUpdateItem">
                 <label>Email</label>
                 <input
@@ -117,6 +109,15 @@ export default function User() {
                   className="userUpdateInput"
                   name="email"
                   onChange={handleChange}
+                />
+              </div>
+              <div className="userUpdateItem">
+                <label>Password</label>
+                <input
+                  type="password"
+                  placeholder="password"
+                  name="password"
+                  className="userUpdateInput"
                 />
               </div>
               {/* <div className="userUpdateItem">
@@ -146,7 +147,7 @@ export default function User() {
               <div className="userUpdateUpload">
                 <img
                   className="userUpdateImg"
-                  src="https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?cs=srgb&dl=pexels-chloe-1043474.jpg&fm=jpg"
+                  src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?cs=srgb&dl=pexels-mohamed-abdelghaffar-771742.jpg&fm=jpg"
                   alt=""
                 />
                 <label htmlFor="file">

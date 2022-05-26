@@ -18,6 +18,7 @@ import Login from "./pages/login/Login";
 import WidgetLg from "./components/widgetLg/WidgetLg";
 import FeaturedInfo from "./components/featuredInfo/FeaturedInfo";
 import Chart from "./components/chart/Chart";
+import AdminUser from "./components/adminUser/AdminUser";
 
 function App() {
   // const admin = JSON.parse(
@@ -27,6 +28,8 @@ function App() {
   const user = JSON.parse(localStorage.getItem("persist:root"))?.user;
   const currentUser = user && JSON.parse(user).currentUser;
   const admin = currentUser?.isAdmin;
+  const currentUserId = currentUser?._id;
+  console.log(currentUserId);
   return (
     <Router>
       <Switch>
@@ -61,6 +64,9 @@ function App() {
               </Route>
               <Route path="/newUser">
                 <NewUser />
+              </Route>
+              <Route path="/settings">
+                <AdminUser userId={currentUserId} />
               </Route>
               <Route path="/products">
                 <ProductList />
