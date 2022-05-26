@@ -27,7 +27,7 @@ const Login = () => {
             justifyContent: "center",
           }}
         >
-          <h1>Login</h1>
+          <h1>LOGIN</h1>
           <input
             style={{ padding: 10, marginBottom: 20 }}
             type="text"
