@@ -11,6 +11,7 @@ import {
   DynamicFeed,
   ChatBubbleOutline,
   WorkOutline,
+  AddBoxRounded,
   Report,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
@@ -43,6 +44,12 @@ export default function Sidebar() {
               <li className="sidebarListItem">
                 <Storefront className="sidebarIcon" />
                 Manage Products
+              </li>
+            </Link>
+            <Link to="/newproduct" className="link">
+              <li className="sidebarListItem">
+                <AddBoxRounded className="sidebarIcon" />
+                Create Listing
               </li>
             </Link>
             <Link to="/transactions" className="link">

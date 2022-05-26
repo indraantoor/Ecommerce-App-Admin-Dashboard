@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
 import { login } from "../../redux/apiCalls";
+import "./Login.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -15,36 +17,40 @@ const Login = () => {
   };
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <input
-        style={{ padding: 10, marginBottom: 20 }}
-        type="text"
-        placeholder="username"
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        style={{ padding: 10, marginBottom: 20 }}
-        type="text"
-        placeholder="email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        style={{ padding: 10, marginBottom: 20 }}
-        type="password"
-        placeholder="password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleClick} style={{ padding: 10, width: 100 }}>
-        Login
-      </button>
+    <div class="container">
+      <div class="wrapper">
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <h1>Login</h1>
+          <input
+            style={{ padding: 10, marginBottom: 20 }}
+            type="text"
+            placeholder="username"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            style={{ padding: 10, marginBottom: 20 }}
+            type="text"
+            placeholder="email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            style={{ padding: 10, marginBottom: 20 }}
+            type="password"
+            placeholder="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button onClick={handleClick} style={{ padding: 10, width: 100 }}>
+            Login
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
