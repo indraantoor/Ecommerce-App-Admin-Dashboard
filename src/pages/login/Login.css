@@ -2,11 +2,11 @@
     width: 100vw;
     height: 100vh;
     background: linear-gradient(
-        rgba(255, 255, 255, 0.3),
-        rgba(255, 255, 255, 0.3)
+        rgba(17, 17, 17, 0.6),
+        rgba(17, 17, 17, 0.6)
         ),
-        url("https://images.pexels.com/photos/4065137/pexels-photo-4065137.jpeg?cs=srgb&dl=pexels-cottonbro-4065137.jpg&fm=jpg")
-        center;
+        url("https://images.pexels.com/photos/4065133/pexels-photo-4065133.jpeg?cs=srgb&dl=pexels-cottonbro-4065133.jpg&fm=jpg")
+        no-repeat center center fixed;
     display: flex;
     align-items: center;
     justify-content: center;
