@@ -8,6 +8,7 @@ import {
   AttachMoney,
   BarChart,
   MailOutline,
+  PeopleRounded,
   DynamicFeed,
   ChatBubbleOutline,
   WorkOutline,
@@ -62,6 +63,24 @@ export default function Sidebar() {
               <li className="sidebarListItem">
                 <BarChart className="sidebarIcon" />
                 Reports
+              </li>
+            </Link>
+          </ul>
+        </div>
+
+        <div className="sidebarMenu">
+          <h3 className="sidebarTitle">Users</h3>
+          <ul className="sidebarList">
+            <Link to="/users" className="link">
+              <li className="sidebarListItem">
+                <PeopleRounded className="sidebarIcon" />
+                Manage Users
+              </li>
+            </Link>
+            <Link to="/newUser" className="link">
+              <li className="sidebarListItem">
+                <AddBoxRounded className="sidebarIcon" />
+                Create User
               </li>
             </Link>
           </ul>
